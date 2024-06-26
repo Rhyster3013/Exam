@@ -10,6 +10,7 @@ package exam;
  */
 public class frmDecrypt extends javax.swing.JFrame {
     Encrypt func = new Encrypt();
+    FileReadWrite read = new FileReadWrite();
 
     /**
      * Creates new form frmDecrypt
@@ -297,6 +298,10 @@ public class frmDecrypt extends javax.swing.JFrame {
 
     private void btnReadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReadActionPerformed
         // TODO add your handling code here:
+        String E2 = read.readMessage();
+        int K2 = read.readKey2();
+        txdE2.setText(E2);
+        txdK2.setText(String.valueOf(K2));
     }//GEN-LAST:event_btnReadActionPerformed
 
     /**

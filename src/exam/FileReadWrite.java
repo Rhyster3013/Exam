@@ -66,7 +66,7 @@ public class FileReadWrite {
             br = new BufferedReader(new FileReader(filename));
             
             StringBuffer sb = new StringBuffer();
-            JOptionPane.showMessageDialog(null, "Open successfully");
+            JOptionPane.showMessageDialog(null, "Read message E2 successfully");
             char[] ca = new char[5];
             while (br.ready()){
                 int len = br.read(ca);
@@ -94,7 +94,7 @@ public class FileReadWrite {
             br = new BufferedReader(new FileReader(filename));
             
             StringBuffer sb = new StringBuffer();
-            JOptionPane.showMessageDialog(null, "Open successfully");
+            JOptionPane.showMessageDialog(null, "Read Key K2 successfully");
             char[] ca = new char[5];
             while (br.ready()){
                 int len = br.read(ca);
@@ -123,7 +123,7 @@ public class FileReadWrite {
             br = new BufferedReader(new FileReader(filename));
             
             StringBuffer sb = new StringBuffer();
-            JOptionPane.showMessageDialog(null, "Open successfully");
+            JOptionPane.showMessageDialog(null, "Read Key K1 successfully");
             char[] ca = new char[5];
             while (br.ready()){
                 int len = br.read(ca);
