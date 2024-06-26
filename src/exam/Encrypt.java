@@ -4,10 +4,13 @@
  */
 package exam;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -130,31 +133,6 @@ public class Encrypt {
             return true;
         } catch (NumberFormatException e) {
             return false;
-        }
-    }
-    
-    public void writeMessage(String encrypt){
-        try {
-            BufferedWriter bw = null;String filename = "C:\\Rhyster\\Study\\BaoMatThongTin\\ThucHanh\\Exam\\message.txt";
-            
-            bw = new BufferedWriter(new FileWriter(filename));
-            bw.write(encrypt);
-            bw.close();
-        } catch (Exception e) {
-                Logger.getLogger(frmEncrypt.class.getName()).log(Level.SEVERE, null, e);
-        }
-    }
-    
-    public void writeKey(int key){
-        try {
-            BufferedWriter bw = null;String filename = "C:\\Rhyster\\Study\\BaoMatThongTin\\ThucHanh\\Exam\\key.txt";
-            String k = String.valueOf(key);
-            
-            bw = new BufferedWriter(new FileWriter(filename));
-            bw.write(k);
-            bw.close();
-        } catch (Exception e) {
-                Logger.getLogger(frmEncrypt.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 }

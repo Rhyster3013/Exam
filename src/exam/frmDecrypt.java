@@ -9,6 +9,7 @@ package exam;
  * @author RHYSTER
  */
 public class frmDecrypt extends javax.swing.JFrame {
+    Encrypt func = new Encrypt();
 
     /**
      * Creates new form frmDecrypt
@@ -170,6 +171,11 @@ public class frmDecrypt extends javax.swing.JFrame {
         btndE2.setText("Decrypt (E2)");
 
         btnRead.setText("Read (E2)");
+        btnRead.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReadActionPerformed(evt);
+            }
+        });
 
         btndE1.setText("Decrypt (E1)");
 
@@ -288,6 +294,10 @@ public class frmDecrypt extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnReadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnReadActionPerformed
 
     /**
      * @param args the command line arguments

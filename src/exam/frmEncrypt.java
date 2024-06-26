@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class frmEncrypt extends javax.swing.JFrame {
     Encrypt func = new Encrypt();
+    FileReadWrite write = new FileReadWrite();
     
     /**
      * Creates new form frmExam
@@ -233,6 +234,7 @@ public class frmEncrypt extends javax.swing.JFrame {
         if(!M1.isEmpty() && !K1.isEmpty()){
             E1 = func.Vigenere(M1, K1);
         
+            write.writeKey1(K1);
             this.txeE1.setText(E1);
         }
         else
@@ -268,8 +270,8 @@ public class frmEncrypt extends javax.swing.JFrame {
                 int iK2 = Integer.parseInt(K2);
                 E2 = func.encRF(N1,iK2);
                 
-                func.writeMessage(E2);
-                func.writeKey(iK2);
+                write.writeMessage(E2);
+                write.writeKey2(iK2);
                 this.txeE2.setText(E2);
             }
             else 
