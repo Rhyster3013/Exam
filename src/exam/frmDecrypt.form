@@ -456,11 +456,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Separate (N1) = E1 + M2"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btndN1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btndE2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Decrypt (E2)"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btndE2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnRead">
       <Properties>
@@ -474,6 +480,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Decrypt (E1)"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btndE1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

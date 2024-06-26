@@ -168,8 +168,18 @@ public class frmDecrypt extends javax.swing.JFrame {
         jLabel9.setText("DECRYPT");
 
         btndN1.setText("Separate (N1) = E1 + M2");
+        btndN1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndN1ActionPerformed(evt);
+            }
+        });
 
         btndE2.setText("Decrypt (E2)");
+        btndE2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndE2ActionPerformed(evt);
+            }
+        });
 
         btnRead.setText("Read (E2)");
         btnRead.addActionListener(new java.awt.event.ActionListener() {
@@ -179,6 +189,11 @@ public class frmDecrypt extends javax.swing.JFrame {
         });
 
         btndE1.setText("Decrypt (E1)");
+        btndE1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndE1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -303,6 +318,46 @@ public class frmDecrypt extends javax.swing.JFrame {
         txdE2.setText(E2);
         txdK2.setText(String.valueOf(K2));
     }//GEN-LAST:event_btnReadActionPerformed
+
+    private void btndE2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndE2ActionPerformed
+        // TODO add your handling code here:
+        String E2 = txdE2.getText();
+        int K2 = read.readKey2();
+        String N1 = func.decRF(E2, K2);
+        
+        txdN1.setText(N1);
+    }//GEN-LAST:event_btndE2ActionPerformed
+
+    private void btndN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndN1ActionPerformed
+        // TODO add your handling code here:
+        String E1, M2;
+        E1 = ""; M2 = "";
+        String N1 = txdN1.getText();
+        int lenE1 = read.readLen();
+        int lenMess = N1.length();
+        
+        for (int i = 0; i < lenMess; i++) {
+            if(i < lenE1){
+                E1 += N1.charAt(i);
+            }
+            else{
+                M2 += N1.charAt(i);
+            }
+        }
+        
+        txdE1.setText(E1);
+        txdM2.setText(M2);
+    }//GEN-LAST:event_btndN1ActionPerformed
+
+    private void btndE1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndE1ActionPerformed
+        // TODO add your handling code here:
+        String K1 = read.readKey1();
+        String E1 = txdE1.getText();
+        String M1 = func.Vigenere(E1, K1);
+        
+        txdK1.setText(K1);
+        txdM1.setText(M1);
+    }//GEN-LAST:event_btndE1ActionPerformed
 
     /**
      * @param args the command line arguments

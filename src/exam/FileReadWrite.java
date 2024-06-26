@@ -43,6 +43,20 @@ public class FileReadWrite {
                 Logger.getLogger(frmEncrypt.class.getName()).log(Level.SEVERE, null, e);
         }
     }
+    
+    public void writeLen(int key){
+        try {
+            BufferedWriter bw = null;
+            String filename = "C:\\Rhyster\\Study\\BaoMatThongTin\\ThucHanh\\Exam\\len.txt";
+            String k = String.valueOf(key);
+            
+            bw = new BufferedWriter(new FileWriter(filename));
+            bw.write(k);
+            bw.close();
+        } catch (Exception e) {
+                Logger.getLogger(frmEncrypt.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
 
     public void writeKey1(String key){
         try {
@@ -83,6 +97,35 @@ public class FileReadWrite {
         }
         
         return str;
+    }
+    
+    
+    public int readLen(){
+        int key = 0;
+        
+        try {
+            BufferedReader br = null;
+            String filename = "C:\\Rhyster\\Study\\BaoMatThongTin\\ThucHanh\\Exam\\len.txt";
+            br = new BufferedReader(new FileReader(filename));
+            
+            StringBuffer sb = new StringBuffer();
+            JOptionPane.showMessageDialog(null, "Read Key K2 successfully");
+            char[] ca = new char[5];
+            while (br.ready()){
+                int len = br.read(ca);
+                sb.append(ca, 0, len);
+            }
+            br.close();
+            
+            System.out.println("Key is: " + sb);
+            key = Integer.parseInt(sb.toString());
+            
+            return key;
+        } catch (Exception e) {
+                Logger.getLogger(frmDecrypt.class.getName()).log(Level.SEVERE, null, e);
+        }
+        
+        return key;
     }
     
     public int readKey2(){

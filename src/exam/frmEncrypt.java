@@ -250,8 +250,10 @@ public class frmEncrypt extends javax.swing.JFrame {
         if(E1.isEmpty())
             JOptionPane.showMessageDialog(null, "You must create E1 first");
         else{
-            if(!M2.isEmpty())
+            if(!M2.isEmpty()){
+                write.writeLen(E1.length());
                 this.txeN1.setText(N1);
+            }
             else 
                 JOptionPane.showMessageDialog(null, "The Mesage M2 must not be null");
         }
