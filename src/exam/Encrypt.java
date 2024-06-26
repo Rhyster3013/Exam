@@ -51,6 +51,20 @@ public class Encrypt {
         return enc;
     }
     
+    public String decVig(String message, String key){
+        String plain = "";
+        String kt = "";
+        int kn = key.length();
+        
+        for (int i = 0; i < kn; i++) {
+            kt += (char) (((26 - (Character.toUpperCase(key.charAt(i)) - 'A')) %26) + 'A');
+        }
+        
+        plain = Vigenere(message, kt);
+        
+        return (plain + " and Key Vig = " + kt);
+    }
+    
     private char encrypt (char m, char k){
         InitVig();
         // Depends on the message's letter to decide the alternative pos in Vig

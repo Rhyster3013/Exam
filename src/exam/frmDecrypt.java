@@ -131,37 +131,46 @@ public class frmDecrypt extends javax.swing.JFrame {
 
         jLabel8.setText("Message(N1):");
 
+        txdM1.setEditable(false);
         txdM1.setColumns(20);
         txdM1.setRows(5);
-        txdM1.setText("hutech");
+        txdM1.setEnabled(false);
         jScrollPane8.setViewportView(txdM1);
 
+        txdK1.setEditable(false);
         txdK1.setColumns(20);
         txdK1.setRows(5);
-        txdK1.setText("baomatthongtin");
+        txdK1.setEnabled(false);
         jScrollPane9.setViewportView(txdK1);
 
+        txdE1.setEditable(false);
         txdE1.setColumns(20);
         txdE1.setRows(5);
+        txdE1.setEnabled(false);
         jScrollPane10.setViewportView(txdE1);
 
+        txdM2.setEditable(false);
         txdM2.setColumns(20);
         txdM2.setRows(5);
-        txdM2.setText("hutech");
+        txdM2.setEnabled(false);
         jScrollPane11.setViewportView(txdM2);
 
+        txdN1.setEditable(false);
         txdN1.setColumns(20);
         txdN1.setRows(5);
-        txdN1.setText("hutech");
+        txdN1.setEnabled(false);
         jScrollPane12.setViewportView(txdN1);
 
+        txdK2.setEditable(false);
         txdK2.setColumns(20);
         txdK2.setRows(5);
-        txdK2.setText("baomatthongtin");
+        txdK2.setEnabled(false);
         jScrollPane13.setViewportView(txdK2);
 
+        txdE2.setEditable(false);
         txdE2.setColumns(20);
         txdE2.setRows(5);
+        txdE2.setEnabled(false);
         jScrollPane14.setViewportView(txdE2);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -353,7 +362,7 @@ public class frmDecrypt extends javax.swing.JFrame {
         // TODO add your handling code here:
         String K1 = read.readKey1();
         String E1 = txdE1.getText();
-        String M1 = func.Vigenere(E1, K1);
+        String M1 = func.decVig(E1, K1);
         
         txdK1.setText(K1);
         txdM1.setText(M1);
